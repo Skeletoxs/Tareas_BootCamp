@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "5e600e72-0f3f-4fac-91ed-140fdbcafe2a",
+		"name": "Open Bootcam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26047110"
+	},
+	"item": [
+		{
+			"name": "Listar todos los usuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Estado en 200\",function() {\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Primer elemento es uno\", function() {\r",
+							"   resp = pm.response.json();\r",
+							"   pm.expect(resp[0].nombre).to.eql(\"Uno\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta en menos de 10ms\", function() {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/bootcamper",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bootcamper"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"valor\": 1.567\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/bootcamper",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bootcamper"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PedirunUsuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/bootcamper/Abraham",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bootcamper",
+						"Abraham"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
