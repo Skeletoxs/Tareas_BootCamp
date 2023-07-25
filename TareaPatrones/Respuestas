@@ -1,0 +1,40 @@
+Patrones creacionales
+
+Patron singelton
+Este patron se encuentra diseñado para restringir la creacion de objetos de una clase.
+Se utiliza para cuando se requiere una instancia compartida. por ejemplo cuando se requiere realizar conecciones a bases de datos.
+
+Patron Factory
+Sirve para crear una jerarquia de clases y utilizar una u otra de forma transparente, nos permite cohecionar clases.
+Se puede utilizar en software donde los productos concretos que se crean se desconocen o no se definen con antelacion.
+
+Patron Builder
+Nos permite construir objetos complejos paso a paso
+Una manera de ilustrar el patrón de diseño Builder es considerando el ejemplo de un restaurante al que un cliente realiza un pedido.
+Una vez que han recibido el pedido, los cocineros actúan para elaborarlo.
+Todo el proceso hasta la entrega como tal se hace entre bambalinas”; el cliente no ve lo que ocurre en la cocina y solo recibe el resultado
+
+Patron Prototype
+Tiene como objetivo clonarce y que ese clon herede todos los metodos y propiedades
+Este patrón resulta útil en escenarios donde es impreciso abstraer la lógica que decide qué tipos de objetos utilizará una aplicación, de la lógica que luego usarán esos objetos en su ejecución.
+
+Patrones estructurales
+
+Patron decorador
+Añade funcionalidad a una clase ya existente sin modificar la clase existente.
+El patrón Decorador proporciona la base para implementar objetos dinámicos, transparentes y expandibles en un programa.
+En particular, los componentes de las interfaces gráficas de usuario (GUI) figuran como áreas de aplicación típicas del patrón.
+Si, por ejemplo, se debe enmarcar un campo de texto, basta con emplazar un decorador “invisible” entre el objeto campo de texto y la llamada para insertar el nuevo elemento de la interfaz.
+
+Patron Adapter
+Crea una clase que permite que clases con la misma implementacion y clases con distinta implementacion funcionen coherentemente.
+Se utiliza normalmente cuando trabajamos con codigo viejo y se le quiere implementar cosas nuevas.
+
+Patron Facade
+Consiste en ocultar la complejidad colocnado por delante lo sencillo
+Mediante la implementación del patrón de diseño Facade implementaremos un sistema que permite realizar pagos en línea,
+para lo cual será necesario interactuar con varios sistemas, dichos sistemas conllevan una cierta complejidad,
+por lo que interactuar con todos los subsistemas puede ser muy complicado,
+sobre todo para los programadores que no tienen contexto del funcionamiento de los subsistemas.
+Por lo cual se implementará una fachada que permita exponer operaciones de alto nivel,
+las cuales se encarguen de interactuar con los |subsistemas y abstrae a los programadores de la complejidad de interactuar con dichos sistemas.
